@@ -249,7 +249,7 @@ public class DialogueEditor : EditorWindow
         //target id
         tmpRect.x += tmpRect.width + 5;
         tmpRect.width = optionRect.width * 0.2f;
-        currentOption.text = EditorGUI.TextField(tmpRect, currentOption.targetID);
+        currentOption.targetID = EditorGUI.TextField(tmpRect, currentOption.targetID);
         //take quest toggle
         tmpRect.x += tmpRect.width + 5;
         tmpRect.width = optionRect.width * 0.1f;

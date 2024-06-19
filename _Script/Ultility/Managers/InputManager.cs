@@ -96,6 +96,7 @@ public class InputManager : Singleton<InputManager>
     {
         MoveInput = moveAction.ReadValue<Vector2>();
         InteractInput=interactAction.WasPressedThisFrame();
+        
         ActionBar1Input = actionBar1Action.WasPressedThisFrame();
         ActionBar2Input = actionBar2Action.WasPressedThisFrame();
         ActionBar3Input = actionBar2Action.WasPressedThisFrame();

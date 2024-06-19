@@ -14,6 +14,7 @@ public class InventoryManager : Singleton<InventoryManager>,IParentPanel
     public InventoryContainerUI actionContainer;
     public InventoryContainerUI equipmentContainer;
     [Header("UI")]
+    public GameObject inventoryPanel;
     public GameObject bagPanel;
     public GameObject equipmentPanel;
     public TextMeshProUGUI maxHealthValueTxt;
@@ -51,12 +52,12 @@ public class InventoryManager : Singleton<InventoryManager>,IParentPanel
     }
     public void Open()
     {
-        gameObject.SetActive(true);
+        inventoryPanel.SetActive(true);
         ShowAllSonPanel();
     } 
     public void Close()
     {
-        gameObject.SetActive(false);
+        inventoryPanel.SetActive(false);
     }
     private void ShowAllSonPanel()
     {
@@ -162,7 +163,9 @@ public class InventoryManager : Singleton<InventoryManager>,IParentPanel
     private void PlayerActionBarControl()
     {
         Inventory playerInventory = GameManager.Instance.playerInventory;
+        
         InventoryDataSO playerActionBar = playerInventory.actionBarData;
+        
         if (InputManager.Instance.ActionBar1Input)
         {
             playerInventory.UseItem(playerActionBar, 0);
